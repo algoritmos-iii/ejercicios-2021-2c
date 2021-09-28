@@ -58,21 +58,21 @@ unDiccionario := Dictionary new.
 
 ```smalltalk
 unDiccionario := Dictionary new.
-unDiccionario at: ‘unaClave’ put:  ‘unValor’
+unDiccionario at: 'unaClave' put: 'unValor'
 ```
 
 **¿Cómo acceder al valor de una clave o a un valor por defecto si el diccionario no contiene dicha clave?**
 
 ```smalltalk
 unDiccionario := Dictionary new.
-unDiccionario at: ‘unaClave’ ifAbsent: [ ‘unValorPorDefecto’ ]
+unDiccionario at: 'unaClave' ifAbsent: [ 'unValorPorDefecto' ]
 ```
 
 
 **¿Cómo evaluar unas colaboraciones u otras según un objeto booleano?**
 
 ```smalltalk
-unBooleano ifTrue: [ “envios de mensajes para cuando unBooleano es true” ] ifFalse: [ “envios de mensajes para cuando unBooleano es false”  ]
+unBooleano ifTrue: [ "envios de mensajes para cuando unBooleano es true" ] ifFalse: [ "envios de mensajes para cuando unBooleano es false"  ]
 ```
 
 
