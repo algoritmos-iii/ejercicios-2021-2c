@@ -16,7 +16,7 @@ Cuando habla con un personaje desconocido por Riverwood su hilo de diálogo es (
 
 También se pide agregar un nuevo personaje no jugador Carolina la curandera de Riverwood. Debe funcionar de la misma forma que el guardia pero su repertorio es:
 Personajes prometedores según Riverwood: (1) 'Salud aventurero!', (2) 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' 
-Personajes desconocidos por Riverwood: (1) '¿Estás enfermo Forastero?',  (2) 'Ah, solo quieres conversar' y 'Cuando tengas una aflicción, ven a verme’
+Personajes desconocidos por Riverwood: (1) '¿Estás enfermo Forastero?',  (2) 'Ah, solo quieres conversar' y (3) 'Cuando tengas una aflicción, ven a verme’
 
 Además, Carolina es muy influyente en la opinión de Riverwood, cuando un personaje completa el diálogo con la curandera, es decir llega a la última frase de su repertorio, esto hace que pase a ser calificado como prometedor según Riverwood, y que tanto el guardia como Carolina reinicien sus hilos de conversaciones con dicho personaje.
 
