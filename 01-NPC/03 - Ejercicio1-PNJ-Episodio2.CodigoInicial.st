@@ -97,16 +97,16 @@ test08CuandoLaCuranderaTerminaSuRepertorioDeFrasesConUnPersonajeCambiaLaOpinionD
 	
 	Assert isTrue: (self esVistoPorElPuebloComoPrometedor: self hamilton).! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:00'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/30/2021 19:09:06'!
 test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
 	self olvidarInteraccionesYOpiniones.
 	self carolinaLaCurandera interactuarCon: self hamilton.
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 	
-	Assert that: 'Salud aventurero!!' isEqualTo: (self carolinaLaCurandera interactuarCon: self hamilton)! !
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Salud aventurero!!'.! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:06'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/30/2021 19:08:45'!
 test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
 	self olvidarInteraccionesYOpiniones.
 	self treborElGuardia interactuarCon: self hamilton.
@@ -115,7 +115,7 @@ test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReinic
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 
-	Assert that: 'Bienvenido aventurero!!' isEqualTo: (self treborElGuardia interactuarCon: self hamilton)! !
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Bienvenido aventurero!!'. ! !
 
 
 !PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/25/2021 12:41:48'!
@@ -337,7 +337,7 @@ responderSegunCantidadDeInteracciones
 	^ frases at: (cantidadDeInteracciones min: frases size)! !
 
 
-!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'JMB 9/25/2021 13:08:25'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'JMB 9/30/2021 19:09:46'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
