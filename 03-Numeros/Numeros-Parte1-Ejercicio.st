@@ -135,25 +135,25 @@ Object subclass: #Numero
 	poolDictionaries: ''
 	category: 'Numeros-Parte1-Ejercicio'!
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/9/2019 15:44:29'!
+!Numero methodsFor: 'arithmetic operations' stamp: 'LL 9/13/2020 16:33:53'!
 * aMultiplier 
 
-	(type = #Entero and: [aMultiplier type = #Entero]) ifTrue:	
+	type = #Entero ifTrue:	
 		[ ^self class with: value * aMultiplier integerValue ].
 		
-	(type = #Fraccion and: [aMultiplier type = #Fraccion]) ifTrue:
+	type = #Fraccion ifTrue:
 		[ ^self class with: (numerator * aMultiplier numerator) over: (denominator * aMultiplier denominator) ].
 		
 	self error: 'Tipo de número no soportado'
 	! !
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/9/2019 15:44:40'!
+!Numero methodsFor: 'arithmetic operations' stamp: 'LL 9/13/2020 16:35:06'!
 + anAdder 
 	
-	(type = #Entero and: [anAdder type = #Entero]) ifTrue:
+	type = #Entero ifTrue:
 		[ ^self class with: value + anAdder integerValue ].
 	
-	(type = #Fraccion and: [anAdder type = #Fraccion]) ifTrue:
+	type = #Fraccion ifTrue:
 		[ | newNumerator newDenominator |
 		
 		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
@@ -164,11 +164,12 @@ Object subclass: #Numero
 	self error: 'Tipo de número no soportado'
 	! !
 
-!Numero methodsFor: 'arithmetic operations' stamp: 'NR 9/8/2019 23:19:57'!
+!Numero methodsFor: 'arithmetic operations' stamp: 'LL 9/13/2020 16:35:23'!
 negated
 	
 	type = #Entero ifTrue:
 		[ ^self * (self class with: -1) ].
+		
 	type = #Fraccion ifTrue:
 		[ ^self class with: numerator * (self class with: -1) over: denominator ].! !
 
@@ -252,13 +253,17 @@ printOn: aStream
 			print: denominator ].! !
 
 
-!Numero methodsFor: 'comparing' stamp: 'NR 9/8/2019 21:50:26'!
+!Numero methodsFor: 'comparing' stamp: 'LL 9/15/2020 11:00:17'!
 = anObject
 
-	^(anObject isKindOf: self class) and: [ type = anObject type and: 
-		[ type = #Entero ifTrue: [ value = anObject integerValue] 
-		ifFalse: [ type = #Fraccion ifTrue:
-			[ (numerator * anObject denominator) = (denominator * anObject numerator) ]]]]! !
+	((anObject isKindOf: self class) and: [ type = anObject type ]) ifTrue: [
+		type = #Entero ifTrue: [ ^value = anObject integerValue ].
+		type = #Fraccion ifTrue: [ ^(numerator * anObject denominator) = (denominator * anObject numerator) ].
+		^false
+	].
+
+	^false
+! !
 
 !Numero methodsFor: 'comparing' stamp: 'NR 9/8/2019 22:00:49'!
 hash
@@ -276,11 +281,11 @@ hash
 		
 	self error: 'Tipo de número no soportado'! !
 
-!Numero methodsFor: 'arithmetic operations - private' stamp: 'NR 9/9/2019 16:21:17'!
+!Numero methodsFor: 'arithmetic operations - private' stamp: 'LL 9/13/2020 16:50:25'!
 greatestCommonDivisorWith: anEntero 
 	
 	type = #Entero ifTrue:
-		[^self class with: (value gcd: anEntero integerValue)].
+		[ ^self class with: (value gcd: anEntero integerValue) ].
 		
 	self error: 'Tipo de número no soportado'! !
 
